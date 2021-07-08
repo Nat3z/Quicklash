@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css">
+    <title>Quicklash</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <!---------->
+    <!-- Scripts -->
+    <script src="/code/hostlash.js"></script>
+    <script src="/code/jSync.js"></script>
+    <!------------->
+</head>
+<body>
+    <div style="display: block; margin: auto; position: fixed; top: 30%; width: 100%;">
+        <h1>Quicklash!</h1>
+        <input id="gmid" type="text" placeholder="Game ID" style="
+         display: block; margin: auto; width: 250px;
+         height: 50px; font-size: 25px; top: 10px; position: relative;
+         outline: none;
+         border: 3px rgb(100, 43, 255) solid;
+         background-color: rgb(58, 74, 221);
+         color: whitesmoke;
+         text-align: center;
+        "  />
+
+        <input id="name" type="text" placeholder="Name" style="
+         display: block; margin: auto; width: 250px;
+         height: 50px; font-size: 25px; top: 15px; position: relative;
+         outline: none;
+         border: 3px rgb(100, 43, 255) solid;
+         background-color: rgb(58, 74, 221);
+         color: whitesmoke;
+         text-align: center;
+        "  />
+        <button style="
+         display: block;
+         margin: auto; width: 260px;
+         top: 25px;
+         position: relative;
+         height: 50px;
+         border: 2px rgb(112, 29, 206) solid;
+         background-color: rgb(93, 25, 172);
+         color: whitesmoke;
+         font-size: 25px;
+
+        " onclick="play()">Play!</button>
+
+        <button onclick="hostServer()" style="
+         display: block;
+         margin: auto; width: 150px;
+         top: 35px;
+         position: relative;
+         height: 50px;
+         border: 2px rgb(197, 21, 21) solid;
+         background-color: rgb(185, 19, 19);
+         color: whitesmoke;
+         font-size: 25px;
+
+        ">Host</button>
+    </div>
+
+    <footer style="
+     bottom: 0; position: fixed; 
+     font-size: 12px; color: rgb(126, 126, 126); 
+     text-align: center; width: 80%; left: 10%;
+     height: 25px; background-color: rgb(187, 1, 63); border-top-left-radius: 10px; border-top-right-radius: 10px;
+     border: 3px rgb(194, 3, 92) solid; transition-duration: 0.5s;
+    " id="notif">
+        <p style="top: 30%; position: relative;">Made by Nat3z</p>
+    </footer>
+    
+    <div id="loading-screen">
+        <img src="https://media2.giphy.com/media/fLsqdVcQb6UxXOrGam/giphy.gif?cid=6c09b952i2uw8komf00tj4i40rsis6chs9drl6aljbnwoye9&rid=giphy.gif&ct=s"
+            style="
+             width: 100px;
+             display: block;
+             margin: auto;
+             top: 37%;
+             position: relative;
+            "
+        />
+    </div>
+</body>
+</html>

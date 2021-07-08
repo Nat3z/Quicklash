@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css">
+    <title>Quicklash</title>
+    <var style="left: 10000000000px; position: fixed;" id="session"><%= ses %></var>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <!---------->
+    <!-- Scripts -->
+        <script src="/code/hostlash.js"></script>
+        <script src="/code/jSync.js"></script>
+        <script src="/code/clientHoster.js"></script>
+    <!------------->
+</head>
+<body>
+    <div style="
+     width: 250px; height: 80px; 
+     background-color: rgba(39, 21, 196, 0.616); 
+     color: rgb(218, 218, 218); font-size: 50px;
+     top: 5%; left: 3vw;
+     position: fixed; border: 3px rgb(53, 8, 255) solid;
+     border-radius: 10px;
+    " id="gamepin">
+        <p style="left: 10px; position: relative; top: 15px;" id="gameid"><%= gameID %></p>
+    </div>
+
+    <div style="
+    width: 250px; height: 80px; 
+    background-color: rgba(7, 85, 7, 0.616); 
+    color: rgb(196, 196, 196); font-size: 50px;
+    top: 5%; left: 300px;
+    position: fixed; border: 3px rgb(12, 85, 28) solid;
+    border-radius: 10px;
+   " onclick="startGame()" id="startgame">
+       <p style="left: 10px; position: relative; top: 15px;">Start</p>
+   </div>
+
+   
+    <div style="width: 30%; left: 68%; position: fixed; height: 90%; top: 5%; border: 3px rgb(100, 7, 143) solid; background-color: rgba(0, 0, 0, 0.438); border-radius: 10px;" id="content-desc">
+        <h1 style="text-align: center; top: 10px; position: relative; font-size: 32px;">Let's Play!</h1>
+        <h1 style="text-align: center; top: 15px; position: relative; font-size: 15px; font-weight: lighter; font-size: 20px; width: 100%;">Connect to <%= address %> and insert this game id to play!</h1>
+    </div>
+    
+    <div style="border: 3px rgb(100, 7, 143) solid; width: 60%; overflow-x: hidden; overflow-y: auto; background-color: rgba(0, 0, 0, 0.178); height: 75%; top: 20%; position: fixed; left: 3%; border-radius: 10px;" id="players">
+
+    </div>
+
+    <div style="border: 3px rgb(100, 7, 143) solid; width: 81%; overflow-x: hidden; overflow-y: auto; display: none; background-color: rgba(140, 65, 225, 0.219); height: 10%; top: 10%; position: fixed; left: 10%; border-radius: 10px;" id="question" class="slides">
+        <h1 style="position: relative; top: 20px; font-size: 25px;" id="qnae">Question 1</h1>
+    </div>
+
+    <h1 style="bottom: 15px; position: fixed; text-align: center; width: 100%; font-size: 25px; display: none;" class="slides">Choose your favorite answer on your screen!</h1>
+    <p style="bottom: 50px; font-size: 30px; position: fixed; text-align: center; width: 100%; color: rgb(214, 169, 18); display: none;" id="questionElapsed" class="slides">15s</p>
+
+    <div style="border: 3px rgb(110, 22, 22) solid; width: 30%; overflow-x: hidden; overflow-y: auto; background-color: rgba(225, 65, 65, 0.219); height: 45%; top: 25%; position: fixed; left: 10%; border-radius: 10px; display: none; padding: 5px 5px 0px; text-align: center;" id="qnap1" class="slides">
+
+    </div>
+
+    <div style="border: 3px rgb(28, 22, 116) solid; display: none; width: 30%; overflow-x: hidden; overflow-y: auto; background-color: rgba(81, 65, 225, 0.219); height: 45%; top: 25%; position: fixed; left: 60%; border-radius: 10px; padding: 5px 5px 0px; text-align: center;" id="qnap2" class="slides">
+
+    </div>
+
+    <div style="width: 100%; position: fixed; text-align: center; bottom: 15px; font-size: 30px; display: none;" id="qnaw">
+        <p style="bottom: 50px; font-size: 30px; position: fixed; text-align: center; width: 100%; color: rgb(214, 113, 18);" id="timeElapsed">10s</p>
+        Your Questions Have Been Given!
+    </div>
+
+    <div class="podium" style="display: none;">
+        <h1 style="width: 100%; top: 10%; position: fixed; text-align: center;">Game End!</h1>
+        <!--
+            PODIUM
+        -->
+        <div style="color: whitesmoke; border: 3px rgb(0, 153, 20) solid; background-color: rgba(5, 207, 39, 0.247); left: 25%; width: 50%; display: block; margin: auto; height: 50px; position: fixed; top: 20%;">
+            <p style="top: 15%; left: 10px; position: relative; font-size: 35px;" id="winner"></p>
+        </div>
+    
+        <div style="color: whitesmoke; border: 3px rgb(184, 10, 10) solid; background-color: rgba(255, 0, 0, 0.247); left: 26%; width: 48%; display: block; margin: auto; height: 50px; position: fixed; top: 30%;">
+            <p style="top: 15%; left: 10px; position: relative; font-size: 35px;" id="second"></p>
+        </div>
+        <div style="color: whitesmoke; border: 3px rgb(0, 204, 255) solid; background-color: rgba(8, 177, 219, 0.247); left: 27.6%; width: 45%; display: block; margin: auto; height: 50px; position: fixed; top: 40%;">
+            <p style="top: 15%; left: 10px; position: relative; font-size: 35px;" id="third"></p>
+        </div>
+    </div>
+
+
+
+
+    <!--
+        Load Screen
+    -->
+    <div id="loading-screen">
+        <img src="https://media2.giphy.com/media/fLsqdVcQb6UxXOrGam/giphy.gif?cid=6c09b952i2uw8komf00tj4i40rsis6chs9drl6aljbnwoye9&rid=giphy.gif&ct=s"
+            style="
+             width: 100px;
+             display: block;
+             margin: auto;
+             top: 37%;
+             position: relative;
+            "
+        />
+    </div>
+</body>
+</html>

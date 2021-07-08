@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css">
+    <title>Quicklash</title>
+    <var style="left: 100000000000px; position: fixed;" id="sessionID"><%= uName %></var>
+    <var style="left: 100000000000px; position: fixed;" id="id"><%= id %></var>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+    <!---------->
+    <!-- Scripts -->
+        <script src="/code/playlash.js"></script>
+        <script src="/code/jSync.js"></script>
+    <!------------->
+</head>
+<body>
+    <div style="top: 0; position: relative; width: 100%; height: 50px; background-color: rgb(65, 0, 102); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+        <div style="width: 100px; height: 30px; background-color: whitesmoke; position: fixed; top: 10px; left: 15px; border-radius: 10px;">
+            <p style="width: 80px; color: black; font-family: 'Lato', sans-serif; font-weight: bolder; font-size: 22px; position: fixed; top: 12px; left: 25px; text-align: center;" id="score">0</p>
+        </div>
+
+        <div style="width: 100px; height: 30px; background-color: rgb(167, 15, 4); position: fixed; top: 10px; right: 15px; border-radius: 10px; float: left; cursor: pointer; z-index: 3;" onclick="leave()">
+            <p style="width: 80px; color: rgb(255, 255, 255); font-family: 'Lato', sans-serif; font-weight: bolder; font-size: 22px; position: fixed; top: 12px; right: 25px; text-align: center;">Leave</p>
+        </div>
+    </div>
+    <div style="display: block; margin: auto; position: fixed; width: 100%; height: 100%" id="notewel">
+        <h1 style="top: 30%; position: relative; font-weight: 900;">Welcome!</h1>
+        <h1 style="top: 31%; position: relative; font-size: 15px;">The game will begin shortly!</h1>
+    </div>
+
+    <div style="display: block; margin: auto; position: fixed; width: 100%; height: 100%; display: none;" id="questionA">
+        <div style="
+         display: block; margin: auto;
+         top: 30%;
+         text-align: center;
+         width: 400px;
+         position: relative;
+         font-size: 20px;
+         height: 45px;
+         border: 2px rgb(65, 0, 102) solid;
+         border-radius: 12px;
+         background-color: rgba(84, 2, 177, 0.322);
+         ">
+         <p style="top: 30%; position: relative;" id="question">QUESTION</p>
+        </div>
+        <input style="top: 32%; position: relative; display: block; margin: auto; width: 350px; outline: none; background-color: rgba(7, 7, 7, 0.514); border: 1px black solid; border-radius: 8px; color: whitesmoke; text-align: center;" placeholder="Answer Here!" id="answer"></input>
+        <button style="top: 34%; position: relative; display: block; margin: auto; width: 350px; height: 30px; background-color: rgba(135, 7, 167, 0.397); border-radius: 5px; border: 2px rgb(135, 7, 167) solid; color: white;" onclick="submitAnswer()" id="submit">Submit</button>
+    </div>
+
+    <!--
+        PODIUM
+    -->
+    <div style="width: 100%; top: 30%; position: fixed; display: none;" class="podium">
+        <h1 style="color: rgb(31, 153, 15); top: 30%; position: fixed; width: 100%; font-size: 70px;" id="placement"></h1>
+        <p style="top: 41%; position: fixed; width: 100%; text-align: center;" id="encourageMessage"></p>
+    </div>
+    
+
+
+
+    <!--
+        I question answer lamo
+    -->
+    <h1 style="top: 30%; position: fixed; display: none; width: 100%; text-align: center;" id="thanks">Thanks for voting!</h1>
+    <div style="border: 3px rgb(88, 16, 16) solid; width: 45%; overflow-x: hidden; overflow-y: auto; background-color: rgba(225, 65, 65, 0.219); height: 85%; top: 10%; position: fixed; left: 3%; border-radius: 10px; display: none; padding: 5px 5px 0px; text-align: center;" id="qnap1" class="slides">
+        <p style="top: 43%; font-size: 35px; position: relative;">Vote for red answer</p>
+    </div>
+
+    <div style="border: 3px rgb(18, 14, 78) solid; display: none; width: 45%; overflow-x: hidden; overflow-y: auto; background-color: rgba(81, 65, 225, 0.219); height: 85%; top: 10%; position: fixed; left: 51%; border-radius: 10px; padding: 5px 5px 0px; text-align: center;" id="qnap2" class="slides">
+        <p style="top: 43%; font-size: 35px; position: relative;">Vote for blue answer</p>
+    </div>
+
+    <div id="loading-screen">
+        <img src="https://media2.giphy.com/media/fLsqdVcQb6UxXOrGam/giphy.gif?cid=6c09b952i2uw8komf00tj4i40rsis6chs9drl6aljbnwoye9&rid=giphy.gif&ct=s"
+            style="
+             width: 100px;
+             display: block;
+             margin: auto;
+             top: 37%;
+             position: relative;
+            "
+        />
+    </div>
+</body>
+</html>
